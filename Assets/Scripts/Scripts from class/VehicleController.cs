@@ -13,7 +13,7 @@ public class VehicleController : MonoBehaviour
     public float current_direction_degrees = 90.0f;
     public float current_velocity_per_second = 0.0f;
 
-    public FlowFieldManager ffm;
+    //public FlowFieldManager ffm;
 
     void Update()
     {
@@ -38,12 +38,13 @@ public class VehicleController : MonoBehaviour
             Debug.DrawRay(back_of_vehicle, force_direction, Color.red);
         }
 
-        Vector3 force = ffm.GetForceForPosition(transform.position);
-        force_direction += force;
-
-        force_direction.Normalize();
-        
-        rb.AddForce(force_direction * acceleration_per_second * Time.deltaTime, ForceMode.Acceleration);
+        #region FlowField
+        // FLOW FIELD STUFF
+        //Vector3 force = ffm.GetForceForPosition(transform.position);
+        //force_direction += force;
+        //force_direction.Normalize();
+        //rb.AddForce(force_direction * acceleration_per_second * Time.deltaTime, ForceMode.Acceleration);
+        #endregion
 
         // Left
         Debug.DrawRay(transform.position, -transform.right, Color.yellow);
@@ -72,7 +73,7 @@ public class VehicleController : MonoBehaviour
         #endregion
 
 
-        /*
+
         #region Velocity
         if (Input.GetKey(KeyCode.W))
         {
@@ -88,8 +89,8 @@ public class VehicleController : MonoBehaviour
         Vector3 velocity_per_second = new Vector3(Mathf.Cos(current_direction_degrees * Mathf.Deg2Rad), Mathf.Sin(current_direction_degrees * Mathf.Deg2Rad), 0.0f);
         velocity_per_second *= current_velocity_per_second;
 
-        //transform.position += velocity_per_second * Time.deltaTime;
-        */
+        transform.position += velocity_per_second * Time.deltaTime;
+
 
     }
 }
