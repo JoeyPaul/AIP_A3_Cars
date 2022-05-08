@@ -11,11 +11,17 @@ public class GameManager : MonoBehaviour
     int ai_3_laps = 1;
 
     public VehicleController player;
-
-    void Start()
+    public GameObject gameStartCanvas;
+    public GameObject gameplayCanvas;
+    public GameObject endGameCanvas;
+    public TMPro.TextMeshProUGUI lapsText;
+    public TMPro.TextMeshProUGUI gameOverText;
+    public string winner;
+    
+    private void Start()
     {
+        Time.timeScale = 0.0f;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -26,19 +32,45 @@ public class GameManager : MonoBehaviour
         // Win checker
         if (player.laps == 3)
         {
-            // player wins game hooray
+            winner = "You win!";
+            EndGame(winner);
         }
         else if (ai_1_laps == 3)
         {
-            // Black car wins
+            winner = "AI 1 Wins!";
+            EndGame(winner);
         }
         else if (ai_2_laps == 3)
         {
-            // Blue car wins
+            winner = "AI 2 Wins!";
+            EndGame(winner);
         }
         else if (ai_3_laps == 3)
         {
-            // Green car wins
+            winner = "AI 3 Wins!";
+            EndGame(winner);
         }
+
+        lapsText.text = $"Laps: {player.laps}";
+    }
+
+    public void StartGame(float delayTime)
+    {
+        StartCoroutine(DelayStart(delayTime));
+    }
+
+    IEnumerator DelayStart(float delayTime)
+    {
+        yield return new WaitForSecondsRealtime(delayTime);
+        gameStartCanvas.SetActive(false);
+        gameplayCanvas.SetActive(true);
+        Time.timeScale = 1.0f;
+    }
+
+    public void EndGame(string winner)
+    {
+        gameplayCanvas.SetActive(false);
+        endGameCanvas.SetActive(true);
+        gameOverText.text = winner;
     }
 }
