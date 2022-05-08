@@ -17,6 +17,8 @@ public class VehicleController : MonoBehaviour
 
     //public FlowFieldManager ffm;
     public MapLoader ml;
+    // Checkpoints
+    public List<Checkpoint> checkpoints = new List<Checkpoint>();
 
     void Update()
     {
@@ -72,14 +74,14 @@ public class VehicleController : MonoBehaviour
                 break;
         }
 
-        // Left
-        Debug.DrawRay(transform.position, -transform.right, Color.yellow);
+        ////Left
+        ////Debug.DrawRay(transform.position, -transform.right, Color.yellow);
 
-        // Right
-        Debug.DrawRay(transform.position, transform.right, Color.blue);
+        ////Right
+        ////Debug.DrawRay(transform.position, transform.right, Color.blue);
 
-        // Current Velocity
-        Debug.DrawRay(transform.position, rb.velocity, new Color(0.7f, 0.0f, 1.0f));
+        ////Current Velocity
+        ////Debug.DrawRay(transform.position, rb.velocity, new Color(0.7f, 0.0f, 1.0f));
 
         /*
          * This assessment requires a physically based controller -- this is not using
@@ -118,5 +120,41 @@ public class VehicleController : MonoBehaviour
         transform.position += velocity_per_second * acceleration_scalar * Time.deltaTime;
 
 
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        // hit start
+        if (col.gameObject == checkpoints[0].gameObject)
+        {
+            Debug.Log("hit start");
+            checkpoints[0].active = true;
+            // lap condition.
+            if (checkpoints[1].active && checkpoints[2].active && checkpoints[3].active)
+            {
+                laps++;
+                ResetCheckPoints();
+            }
+        }
+        else if (col.gameObject == checkpoints[1].gameObject)
+        {
+            Debug.Log("hit check 1");
+            checkpoints[1].active = true;
+        }
+        else if (col.gameObject == checkpoints[2].gameObject)
+        {
+            Debug.Log("hit check 2");
+            checkpoints[2].active = true;
+        }
+        else 
+        {
+            Debug.Log("hit check 3");
+            checkpoints[3].active = true;
+        }
+    }
+    void ResetCheckPoints()
+    {
+        checkpoints[1].active = false;
+        checkpoints[2].active = false;
+        checkpoints[3].active = false;
     }
 }

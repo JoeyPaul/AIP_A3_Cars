@@ -8,6 +8,7 @@ public class AiBehaviour : MonoBehaviour
     private Node currentNode = null; // The current selected node
     private Vector3 nodePos; // The current selected nodes position
 
+    public int laps; // current laps
 
     private Rigidbody2D carRb; // The cars rigidbody which has all the forces applied to it
     [SerializeField] private float speedAccel; // The force applied to the car in the transform.right direction
