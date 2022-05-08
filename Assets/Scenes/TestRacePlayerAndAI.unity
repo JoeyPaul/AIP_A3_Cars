@@ -640,8 +640,8 @@ MonoBehaviour:
   minNodeDist: 3.5
   breakBuffer: 15
   maxSight: 0.7
-  avoidanceSpeed: 300
-  worryRadius: 1
+  avoidanceSpeed: 150
+  worryRadius: 1.5
 --- !u!50 &328693165
 Rigidbody2D:
   serializedVersion: 4
@@ -1385,8 +1385,8 @@ MonoBehaviour:
   minNodeDist: 3.5
   breakBuffer: 15
   maxSight: 0.7
-  avoidanceSpeed: 300
-  worryRadius: 1
+  avoidanceSpeed: 150
+  worryRadius: 1.5
 --- !u!4 &1521321198
 Transform:
   m_ObjectHideFlags: 0
@@ -22428,8 +22428,8 @@ MonoBehaviour:
   minNodeDist: 3.5
   breakBuffer: 15
   maxSight: 0.7
-  avoidanceSpeed: 300
-  worryRadius: 1
+  avoidanceSpeed: 150
+  worryRadius: 1.5
 --- !u!50 &2128398782
 Rigidbody2D:
   serializedVersion: 4
