@@ -14,6 +14,7 @@ public class VehicleController : MonoBehaviour
     public float current_velocity_per_second = 0.0f;
 
     //public FlowFieldManager ffm;
+    public MapLoader ml;
 
     void Update()
     {
@@ -45,6 +46,29 @@ public class VehicleController : MonoBehaviour
         //force_direction.Normalize();
         //rb.AddForce(force_direction * acceleration_per_second * Time.deltaTime, ForceMode.Acceleration);
         #endregion
+
+        MapLoader.Tile_Type type = ml.GetSpeedForLocation(transform.position);
+
+        float acceleration_scalar = 0.0f;
+        switch (type)
+        {
+            case MapLoader.Tile_Type.ASPHALT:
+                //rb.drag = 0.33f;
+                acceleration_scalar = 4.0f;
+                break;
+            case MapLoader.Tile_Type.MUD:
+                //rb.drag = 1.0f;
+                acceleration_scalar = 1.5f;
+                break;
+            case MapLoader.Tile_Type.DIRT:
+                //rb.drag = 0.5f;
+                acceleration_scalar = 3.5f;
+                break;
+            case MapLoader.Tile_Type.DEFAULT:
+                //rb.drag = 0.33f;
+                acceleration_scalar = 3.5f;
+                break;
+        }
 
         // Left
         Debug.DrawRay(transform.position, -transform.right, Color.yellow);
@@ -89,7 +113,7 @@ public class VehicleController : MonoBehaviour
         Vector3 velocity_per_second = new Vector3(Mathf.Cos(current_direction_degrees * Mathf.Deg2Rad), Mathf.Sin(current_direction_degrees * Mathf.Deg2Rad), 0.0f);
         velocity_per_second *= current_velocity_per_second;
 
-        transform.position += velocity_per_second * Time.deltaTime;
+        transform.position += velocity_per_second * acceleration_scalar * Time.deltaTime;
 
 
     }
