@@ -13,6 +13,8 @@ public class VehicleController : MonoBehaviour
     public float current_direction_degrees = 90.0f;
     public float current_velocity_per_second = 0.0f;
 
+    public int laps = 1;
+
     //public FlowFieldManager ffm;
     public MapLoader ml;
 
