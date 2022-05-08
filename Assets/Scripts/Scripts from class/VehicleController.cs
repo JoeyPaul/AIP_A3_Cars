@@ -15,6 +15,10 @@ public class VehicleController : MonoBehaviour
     // Checkpoints
     public List<Checkpoint> checkpoints = new List<Checkpoint>();
 
+    public SpriteRenderer checkpoint1Renderer;
+    public SpriteRenderer checkpoint2Renderer;
+    public SpriteRenderer checkpoint3Renderer;
+
     void Update()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -62,6 +66,22 @@ public class VehicleController : MonoBehaviour
                 speedScalar = ml.tiles["DEFAULT"];
                 break;
         }
+
+        Color awesome = Color.green;
+        awesome.a = 0.2f;
+
+        Color notAwesome = Color.red;
+        notAwesome.a = 0.2f;
+
+        if (checkpoints[1].active) checkpoint1Renderer.color = awesome;
+        else if (!checkpoints[1].active) checkpoint1Renderer.color = notAwesome;
+
+        if (checkpoints[2].active) checkpoint2Renderer.color = awesome;
+        else if (!checkpoints[2].active) checkpoint2Renderer.color = notAwesome;
+
+        if (checkpoints[3].active) checkpoint3Renderer.color = awesome;
+        else if (!checkpoints[3].active) checkpoint3Renderer.color = notAwesome;
+
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
