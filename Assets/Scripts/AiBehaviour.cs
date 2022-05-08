@@ -164,10 +164,10 @@ public class AiBehaviour : MonoBehaviour
         }
     }
     // Show a representation of my current velocity on the editor viewport.
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        if (carRb != null)
-            Gizmos.DrawWireSphere((transform.position + transform.up) + (Vector3)carRb.velocity.normalized * maxSight, 0.5f);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.yellow;
+    //    if (carRb != null)
+    //        Gizmos.DrawWireSphere((transform.position + transform.up) + (Vector3)carRb.velocity.normalized * maxSight, 0.5f);
+    //}
 }
