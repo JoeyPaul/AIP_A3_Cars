@@ -99,7 +99,6 @@ public class MapLoader : MonoBehaviour
     {
         int row = Mathf.FloorToInt(position.y);
         int col = Mathf.FloorToInt(position.x);
-        print(tile_type[row + 10][col + 35]);
         return tile_type[row + 10][col + 35]; // add the offset
     }
 }

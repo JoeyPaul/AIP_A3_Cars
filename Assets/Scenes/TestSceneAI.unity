@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 328693167}
   m_Layer: 0
   m_Name: Car (2)
-  m_TagString: Untagged
+  m_TagString: car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,9 +389,10 @@ MonoBehaviour:
   speedAccel: 210
   SpeedTorque: 12
   minNodeDist: 3.5
-  breakBuffer: 20
-  mapLoader: {fileID: 0}
-  speedAdjuster: 0
+  breakBuffer: 15
+  maxSight: 0.5
+  avoidanceSpeed: 200
+  worryRadius: 2
 --- !u!50 &328693165
 Rigidbody2D:
   serializedVersion: 4
@@ -421,7 +422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328693162}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.97, y: 10.73, z: -0.0067751333}
+  m_LocalPosition: {x: 3.55, y: 10.73, z: -0.0067751333}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -860,7 +861,7 @@ GameObject:
   - component: {fileID: 1521321200}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -881,8 +882,9 @@ MonoBehaviour:
   SpeedTorque: 12
   minNodeDist: 3.5
   breakBuffer: 15
-  mapLoader: {fileID: 0}
-  speedAdjuster: 0
+  maxSight: 0.5
+  avoidanceSpeed: 200
+  worryRadius: 2
 --- !u!4 &1521321198
 Transform:
   m_ObjectHideFlags: 0
@@ -891,7 +893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521321196}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -1.74, y: 9.93, z: -0.0067751333}
+  m_LocalPosition: {x: -2.79, y: 9.93, z: -0.0067751333}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21587,7 +21589,7 @@ GameObject:
   - component: {fileID: 2128398784}
   m_Layer: 0
   m_Name: Car (1)
-  m_TagString: Untagged
+  m_TagString: car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21608,8 +21610,9 @@ MonoBehaviour:
   SpeedTorque: 12
   minNodeDist: 3.5
   breakBuffer: 15
-  mapLoader: {fileID: 0}
-  speedAdjuster: 0
+  maxSight: 0.5
+  avoidanceSpeed: 200
+  worryRadius: 2
 --- !u!50 &2128398782
 Rigidbody2D:
   serializedVersion: 4

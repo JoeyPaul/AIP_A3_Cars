@@ -214,18 +214,70 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1993916028975427291, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993916028975427291, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993916028975427291, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993916028975427291, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993916028975427291, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610435968211816960, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610435968211816960, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610435968211816960, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4610435968211816960, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
       propertyPath: m_GravityScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911896812401225278, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_Size.x
+      value: 2.9226108
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911896812401225278, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1379551
       objectReference: {fileID: 0}
     - target: {fileID: 9074591114239992238, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
       propertyPath: m_Name
       value: 'PlayerVehicle '
       objectReference: {fileID: 0}
+    - target: {fileID: 9074591114239992238, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_TagString
+      value: car
+      objectReference: {fileID: 0}
     - target: {fileID: 9074591114239992239, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
       propertyPath: ml
       value: 
       objectReference: {fileID: 283015030}
+    - target: {fileID: 9074591114239992239, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: speed
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 9074591114239992239, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: torque
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 9074591114239992239, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
       propertyPath: checkpoints.Array.size
       value: 4
@@ -272,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9074591114239992242, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9074591114239992242, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -284,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9074591114239992242, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9074591114239992242, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -296,7 +348,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9074591114239992242, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 9074591115356687816, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9074591115356687816, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9074591114239992240, guid: a3ef60871ea28ae41b76e479a273f9d2, type: 3}
@@ -513,7 +573,7 @@ GameObject:
   - component: {fileID: 328693167}
   m_Layer: 0
   m_Name: Car (2)
-  m_TagString: Untagged
+  m_TagString: car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,8 +595,9 @@ MonoBehaviour:
   SpeedTorque: 12
   minNodeDist: 3.5
   breakBuffer: 20
-  mapLoader: {fileID: 0}
-  speedAdjuster: 0
+  maxSight: 0
+  avoidanceSpeed: 0
+  worryRadius: 0
 --- !u!50 &328693165
 Rigidbody2D:
   serializedVersion: 4
@@ -1204,7 +1265,7 @@ GameObject:
   - component: {fileID: 1521321200}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1226,8 +1287,9 @@ MonoBehaviour:
   SpeedTorque: 12
   minNodeDist: 3.5
   breakBuffer: 15
-  mapLoader: {fileID: 0}
-  speedAdjuster: 0
+  maxSight: 0
+  avoidanceSpeed: 0
+  worryRadius: 0
 --- !u!4 &1521321198
 Transform:
   m_ObjectHideFlags: 0
@@ -1622,7 +1684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884502899}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.48, y: 8.07, z: 0}
+  m_LocalPosition: {x: 11.5, y: 8.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22033,7 +22095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004638699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.4, y: 8.2, z: 0}
+  m_LocalPosition: {x: -13.46, y: 8.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22140,7 +22202,7 @@ GameObject:
   - component: {fileID: 2128398784}
   m_Layer: 0
   m_Name: Car (1)
-  m_TagString: Untagged
+  m_TagString: car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22162,8 +22224,9 @@ MonoBehaviour:
   SpeedTorque: 12
   minNodeDist: 3.5
   breakBuffer: 15
-  mapLoader: {fileID: 0}
-  speedAdjuster: 0
+  maxSight: 0
+  avoidanceSpeed: 0
+  worryRadius: 0
 --- !u!50 &2128398782
 Rigidbody2D:
   serializedVersion: 4
