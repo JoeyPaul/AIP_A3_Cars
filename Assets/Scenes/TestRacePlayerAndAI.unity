@@ -614,10 +614,10 @@ MonoBehaviour:
   speedAccel: 210
   SpeedTorque: 12
   minNodeDist: 3.5
-  breakBuffer: 20
-  maxSight: 0
-  avoidanceSpeed: 0
-  worryRadius: 0
+  breakBuffer: 15
+  maxSight: 0.7
+  avoidanceSpeed: 300
+  worryRadius: 1
 --- !u!50 &328693165
 Rigidbody2D:
   serializedVersion: 4
@@ -648,7 +648,7 @@ Transform:
   m_GameObject: {fileID: 328693162}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -0.97, y: 10.73, z: -0.0067751333}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1923562013}
@@ -1307,9 +1307,9 @@ MonoBehaviour:
   SpeedTorque: 12
   minNodeDist: 3.5
   breakBuffer: 15
-  maxSight: 0
-  avoidanceSpeed: 0
-  worryRadius: 0
+  maxSight: 0.7
+  avoidanceSpeed: 300
+  worryRadius: 1
 --- !u!4 &1521321198
 Transform:
   m_ObjectHideFlags: 0
@@ -1319,7 +1319,7 @@ Transform:
   m_GameObject: {fileID: 1521321196}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -1.74, y: 9.93, z: -0.0067751333}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 663595499}
@@ -22244,9 +22244,9 @@ MonoBehaviour:
   SpeedTorque: 12
   minNodeDist: 3.5
   breakBuffer: 15
-  maxSight: 0
-  avoidanceSpeed: 0
-  worryRadius: 0
+  maxSight: 0.7
+  avoidanceSpeed: 300
+  worryRadius: 1
 --- !u!50 &2128398782
 Rigidbody2D:
   serializedVersion: 4
@@ -22277,7 +22277,7 @@ Transform:
   m_GameObject: {fileID: 2128398779}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -0.91, y: 9.24, z: -0.0067751333}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1173248409}

@@ -27,6 +27,7 @@ public class AiBehaviour : MonoBehaviour
     private Vector3 right;
     private Vector3 avoidanceForcePerSec;
     private GameObject currentThreat;
+     private bool isRight;
     [SerializeField] private float maxSight;
     [SerializeField] private float avoidanceSpeed;
     [SerializeField] private float worryRadius;
@@ -122,7 +123,8 @@ public class AiBehaviour : MonoBehaviour
     {
         Vector3 velocityPerSec = carRb.velocity * Time.deltaTime;
         // This is where obstacles will be looked for and takes into account our current velocity.
-        right = -transform.up + velocityPerSec.normalized * maxSight;
+        right = transform.position + (-transform.up * 0.5f) + velocityPerSec.normalized * maxSight;
+        left = transform.position + (transform.up * 0.5f) + velocityPerSec.normalized * maxSight;
         GameObject[] obstacles = GameObject.FindGameObjectsWithTag("car");
 
         // If our ahead vector is within the radius of one of the obstacles then we have a threat
@@ -130,11 +132,24 @@ public class AiBehaviour : MonoBehaviour
         GameObject tempThreat = null;
         foreach (GameObject obstacle in obstacles)
         {
-            float distToCar = Vector3.Distance(obstacle.transform.position, right);
-            if (distToCar <= closestDistance)
+            if(obstacle != gameObject)
             {
-                closestDistance = distToCar;
-                tempThreat = obstacle;
+                float distToCarRight = Vector3.Distance(obstacle.transform.position, right);
+                float distToCarLeft = Vector3.Distance(obstacle.transform.position, left);
+                if (distToCarRight <= closestDistance || distToCarLeft <= closestDistance)
+                {
+                    if(distToCarLeft < distToCarRight)
+                    {
+                        closestDistance = distToCarLeft;
+                        isRight = false;
+                    }
+                    else
+                    {
+                        closestDistance = distToCarLeft;
+                        isRight = true;
+                    }
+                    tempThreat = obstacle;
+                }
             }
         }
         if (Vector3.Distance(tempThreat.transform.position, right) < worryRadius)
@@ -153,8 +168,10 @@ public class AiBehaviour : MonoBehaviour
         // If there is a current threat then set the avoidance force to the required amount.
         if (currentThreat != null)
         {
-            print("there is a threat");
-            avoidanceForcePerSec = right - currentThreat.transform.position;
+            if(isRight)
+                avoidanceForcePerSec = right - currentThreat.transform.position;
+            else
+                avoidanceForcePerSec = left - currentThreat.transform.position;
             avoidanceForcePerSec = avoidanceForcePerSec.normalized * avoidanceSpeed;
         }
         // If there is no required force then reset avoidance force.
@@ -168,6 +185,8 @@ public class AiBehaviour : MonoBehaviour
     //{
     //    Gizmos.color = Color.yellow;
     //    if (carRb != null)
-    //        Gizmos.DrawWireSphere((transform.position + transform.up) + (Vector3)carRb.velocity.normalized * maxSight, 0.5f);
+    //        Gizmos.DrawWireSphere(transform.position + (-transform.up * 0.5f) + (Vector3)carRb.velocity.normalized * maxSight, 0.5f);
+    //    if (carRb != null)
+    //        Gizmos.DrawWireSphere(transform.position + (transform.up * 0.5f) + (Vector3)carRb.velocity.normalized * maxSight, 0.5f);
     //}
 }
