@@ -17,7 +17,11 @@ public class GameManager : MonoBehaviour
     public TMPro.TextMeshProUGUI lapsText;
     public TMPro.TextMeshProUGUI gameOverText;
     public string winner;
-
+    
+    private void Start()
+    {
+        Time.timeScale = 0.0f;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -47,7 +51,7 @@ public class GameManager : MonoBehaviour
             EndGame(winner);
         }
 
-        lapsText.text = string.Format("Laps: {}", player.laps);
+        lapsText.text = $"Laps: {player.laps}";
     }
 
     public void StartGame(float delayTime)
