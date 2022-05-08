@@ -27,7 +27,8 @@ public class AiBehaviour : MonoBehaviour
     private Vector3 right;
     private Vector3 avoidanceForcePerSec;
     private GameObject currentThreat;
-     private bool isRight;
+    private bool isRight;
+    float closestDistance;
     [SerializeField] private float maxSight;
     [SerializeField] private float avoidanceSpeed;
     [SerializeField] private float worryRadius;
@@ -128,7 +129,7 @@ public class AiBehaviour : MonoBehaviour
         GameObject[] obstacles = GameObject.FindGameObjectsWithTag("car");
 
         // If our ahead vector is within the radius of one of the obstacles then we have a threat
-        float closestDistance = Mathf.Infinity;
+        closestDistance = Mathf.Infinity;
         GameObject tempThreat = null;
         foreach (GameObject obstacle in obstacles)
         {
@@ -172,7 +173,7 @@ public class AiBehaviour : MonoBehaviour
                 avoidanceForcePerSec = right - currentThreat.transform.position;
             else
                 avoidanceForcePerSec = left - currentThreat.transform.position;
-            avoidanceForcePerSec = avoidanceForcePerSec.normalized * avoidanceSpeed;
+            avoidanceForcePerSec = avoidanceForcePerSec.normalized * (avoidanceSpeed / closestDistance);
         }
         // If there is no required force then reset avoidance force.
         else
