@@ -21,9 +21,38 @@ public class MapLoader : MonoBehaviour
         DEFAULT
     };
 
-    // Start is called before the first frame update
+    public Dictionary<string, float> tiles = new Dictionary<string, float>();
+
+    [SerializeField] private float dirtSpeed;
+    [SerializeField] private float mudSpeed;
+    [SerializeField] private float asphaltSpeed;
+    [SerializeField] private float defaultSpeed;
+
+
     void Start()
     {
+        string[] TempNames = System.Enum.GetNames(typeof(Tile_Type));
+        foreach (string tileName in TempNames)
+        {
+            switch (tileName)
+            {
+                case "DIRT":
+                    tiles.Add(tileName, dirtSpeed);
+                break;
+
+                case "MUD":
+                    tiles.Add(tileName, mudSpeed);
+                break;
+
+                case "ASPHALT":
+                    tiles.Add(tileName, asphaltSpeed);
+                break;
+
+                case "DEFAULT":
+                    tiles.Add(tileName, defaultSpeed);
+                break;
+            }
+        }
         Texture2D texture = Resources.Load<Texture2D>("map");
 
         for (int row = 0; row < texture.height; ++row)
@@ -42,7 +71,7 @@ public class MapLoader : MonoBehaviour
                     spawned = GameObject.Instantiate(dirt);
                     tile_type[row].Add(Tile_Type.DIRT);
                 }
-                // MUD
+                //// MUD
                 else if (pixel.r == 0.0f && pixel.g == 1.0f && pixel.b == 0)
                 {
                     spawned = GameObject.Instantiate(mud);

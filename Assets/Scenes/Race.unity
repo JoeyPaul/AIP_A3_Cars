@@ -758,6 +758,10 @@ MonoBehaviour:
   mud: {fileID: 3434516061152508501, guid: 206c98b5a3239ba46b4bbf722358fb93, type: 3}
   asphalt: {fileID: 2058974615373901716, guid: 2af745de7af33834a8261598504caa6e, type: 3}
   default_tile: {fileID: 6839962904941792266, guid: c38ca134976be06448ad37a65c1fd62a, type: 3}
+  dirtSpeed: 0.75
+  mudSpeed: 0.25
+  asphaltSpeed: 1
+  defaultSpeed: 1
 --- !u!4 &810507404
 Transform:
   m_ObjectHideFlags: 0

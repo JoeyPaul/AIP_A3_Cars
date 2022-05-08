@@ -54,19 +54,19 @@ public class VehicleController : MonoBehaviour
         {
             case MapLoader.Tile_Type.ASPHALT:
                 //rb.drag = 0.33f;
-                acceleration_scalar = 4.0f;
+                acceleration_scalar = ml.tiles["ASPHALT"];
                 break;
             case MapLoader.Tile_Type.MUD:
                 //rb.drag = 1.0f;
-                acceleration_scalar = 1.5f;
+                acceleration_scalar = ml.tiles["MUD"];
                 break;
             case MapLoader.Tile_Type.DIRT:
                 //rb.drag = 0.5f;
-                acceleration_scalar = 3.5f;
+                acceleration_scalar = ml.tiles["DIRT"];
                 break;
             case MapLoader.Tile_Type.DEFAULT:
                 //rb.drag = 0.33f;
-                acceleration_scalar = 3.5f;
+                acceleration_scalar = ml.tiles["DEFAULT"];
                 break;
         }
 
